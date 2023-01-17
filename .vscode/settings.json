@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./control_medios/capa_negocios",
+        "./control_medios/capa_presentacion"
+    ]
+}
