@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
-#from equipos_electronicos import *
+from capa_negocios.equipos_electronicos import *
 
 class Equipos(tk.Tk):
     def __init__(self):
@@ -52,13 +52,14 @@ class Equipos(tk.Tk):
         if self.provider_entry.get()=="" or self.type_combo.get()=="" or self.brand_combo.get()=="" or self.warranty_spinbox.get()=="":
             tk.messagebox.showwarning("Error","Por favor selecciona toda la informacion requerida")
         else:
-            #nuevo = equipos_electronico()
+            nuevo = equipos_electronico()
             self.all_data.append({"tipo":self.type_combo.get(),"marca":self.brand_combo.get(),"proveedor":self.provider_entry.get(),"garantía":self.warranty_spinbox.get()})
-            #print(self.all_data[0]["tipo"])
+            nuevo.set_datos(self.all_data[0]["tipo"],self.all_data[0]["marca"],self.all_data[0]["proveedor"],self.all_data[0]["garantía"])
             tk.messagebox.showinfo("Registro Exitoso","Datos Ingresados Correctamente")
             self.provider_entry.delete(0,tk.END)
             self.type_combo.delete(0,tk.END)
             self.brand_combo.delete(0,tk.END)
             self.warranty_spinbox.delete(0,tk.END)
 
-            print(self.all_data)
+            print(nuevo.get_datos())
+            #print(self.all_data)

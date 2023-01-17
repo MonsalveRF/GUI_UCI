@@ -18,12 +18,12 @@ class Main(tk.Tk):
 
     def open_equipos(self):
         self.destroy()
-        import equipos
+        from capa_presentacion import equipos
         equipos.Equipos()
 
     def open_inmuebles(self):
         self.destroy()
-        import inmuebles
+        from capa_presentacion import inmuebles
         inmuebles.Inmuebles()
 
 if __name__ == "__main__":
