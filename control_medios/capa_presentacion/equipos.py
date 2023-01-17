@@ -53,8 +53,7 @@ class Equipos(tk.Tk):
             tk.messagebox.showwarning("Error","Por favor selecciona toda la informacion requerida")
         else:
             nuevo = equipos_electronico()
-            self.all_data.append({"tipo":self.type_combo.get(),"marca":self.brand_combo.get(),"proveedor":self.provider_entry.get(),"garantía":self.warranty_spinbox.get()})
-            nuevo.set_datos(self.all_data[0]["tipo"],self.all_data[0]["marca"],self.all_data[0]["proveedor"],self.all_data[0]["garantía"])
+            nuevo.set_datos(self.type_combo.get(),self.brand_combo.get(),self.provider_entry.get(),self.warranty_spinbox.get())
             tk.messagebox.showinfo("Registro Exitoso","Datos Ingresados Correctamente")
             self.provider_entry.delete(0,tk.END)
             self.type_combo.delete(0,tk.END)
@@ -62,4 +61,4 @@ class Equipos(tk.Tk):
             self.warranty_spinbox.delete(0,tk.END)
 
             print(nuevo.get_datos())
-            #print(self.all_data)
+           
